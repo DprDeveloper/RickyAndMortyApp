@@ -1,11 +1,12 @@
 package com.dprddeveloper.rickyandmortyapp
 
+import android.app.Application
 import com.dprddeveloper.rickyandmortyapp.api.ApiClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 
-class AppConfig {
+class AppConfig: Application() {
     companion object{
         val retrofitRequest = Retrofit.Builder()
             .baseUrl("https://rickandmortyapi.com/api/")

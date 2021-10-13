@@ -25,7 +25,7 @@ class RmAdapter(val rmItems: List<RmCharacter>): RecyclerView.Adapter<RmAdapter.
         val view = RmListItemBinding.bind(view)
         fun bind(item: RmCharacter){
             view.name.text = item.name
-            view.image.loadUrl(item.url)
+            view.image.loadUrl(item.image)
         }
     }
 }
