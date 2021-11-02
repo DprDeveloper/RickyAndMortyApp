@@ -7,10 +7,10 @@ import retrofit2.Response
 
 class Repository {
 
-    suspend fun getAllCharacter(): List<RmCharacter>? {
+    suspend fun getAllCharacter(): List<RmCharacter> {
         val response: Response<ResponseCharacter> = AppConfig.retrofitRequest.getAllCharacter()
         if (response.isSuccessful){
-            return response.body()?.let { it.results }
+            return response.body()?.results?: emptyList()
         }else {
             return emptyList()
         }
